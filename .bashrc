@@ -114,3 +114,13 @@ if [ -f ~/.git-completion.bash ]; then
     source ~/.git-completion.bash
 fi
 
+# git prompt
+if [ -f ~/.git-prompt.sh ]; then
+    source ~/.git-prompt.sh
+    GIT_PS1_SHOWCOLORHINTS=1
+    GIT_PS1_SHOWDIRTYSTATE=1
+    GIT_PS1_SHOWSTASHSTATE=1
+    GIT_PS1_SHOWUPSTREAM="verbose git"
+    PROMPT_COMMAND='__git_ps1 "\u@\h:\w" "\\\$ "'
+fi
+
