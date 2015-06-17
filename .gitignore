@@ -5,4 +5,8 @@
 !.bash_aliases
 !.git-completion.bash
 !.git-prompt.sh
+!.vimrc
+!.vim/
+!.vim/*
+!.vim/**/*
 
