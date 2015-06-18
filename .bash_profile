@@ -61,11 +61,27 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    # setup color variables
+    color_is_on=true
+    color_red="\[$(/usr/bin/tput setaf 9)\]"
+    color_green="\[$(/usr/bin/tput setaf 2)\]"
+    color_yellow="\[$(/usr/bin/tput setaf 3)\]"
+    color_blue="\[$(/usr/bin/tput setaf 6)\]"
+    color_white="\[$(/usr/bin/tput setaf 15)\]"
+    color_gray="\[$(/usr/bin/tput setaf 8)\]"
+    color_off="\[$(/usr/bin/tput sgr0)\]"
+    color_error="$(/usr/bin/tput setab 1)$(/usr/bin/tput setaf 7)"
+    color_error_off="$(/usr/bin/tput sgr0)"
+
+    # set user color
+    case $UID in
+        0) color_user=$color_red ;;
+        *) color_user=$color_blue ;;
+    esac
 fi
-unset color_prompt force_color_prompt
+
+# PS1_PREFIX should be defined in .profile
+PS1="$PS1_PREFIX${debian_chroot:+($debian_chroot)}${color_user}\u${color_off}@${color_blue}\h${color_off}:${color_yellow}\w${color_off}\$ "
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
@@ -75,18 +91,6 @@ xterm*|rxvt*)
 *)
     ;;
 esac
-
-# enable color support of ls and also add handy aliases
-export CLICOLOR=1
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    alias dir='dir --color=auto'
-    alias vdir='vdir --color=auto'
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -120,7 +124,7 @@ if [ -f ~/.git-prompt.sh ]; then
     GIT_PS1_SHOWDIRTYSTATE=1
     GIT_PS1_SHOWSTASHSTATE=1
     GIT_PS1_SHOWUPSTREAM="verbose git"
-    PROMPT_COMMAND='__git_ps1 "\u@\h:\w" "\\\$ "'
+    PROMPT_COMMAND='__git_ps1 "$PS1_PREFIX${debian_chroot:+($debian_chroot)}${color_user}\u${color_off}@${color_blue}\h${color_off}:${color_yellow}\w${color_off}" "\$ "'
 fi
 
 # local .bashrc include
