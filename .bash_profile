@@ -81,12 +81,12 @@ if [ "$color_prompt" = yes ]; then
 fi
 
 # PS1_PREFIX should be defined in .profile
-PS1="$PS1_PREFIX${debian_chroot:+($debian_chroot)}${color_user}\u${color_off}@${color_blue}\h${color_off}:${color_yellow}\w${color_off}\$ "
+PS1="$PS1_PREFIX${debian_chroot:+($debian_chroot)}${color_user}\u${color_off}@${color_blue}\H${color_off}:${color_yellow}\w${color_off}\$ "
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\H: \w\a\]$PS1"
     ;;
 *)
     ;;
@@ -124,7 +124,7 @@ if [ -f ~/.git-prompt.sh ]; then
     GIT_PS1_SHOWDIRTYSTATE=1
     GIT_PS1_SHOWSTASHSTATE=1
     GIT_PS1_SHOWUPSTREAM="verbose git"
-    PROMPT_COMMAND='__git_ps1 "$PS1_PREFIX${debian_chroot:+($debian_chroot)}${color_user}\u${color_off}@${color_blue}\h${color_off}:${color_yellow}\w${color_off}" "\$ "'
+    PROMPT_COMMAND='__git_ps1 "$PS1_PREFIX${debian_chroot:+($debian_chroot)}${color_user}\u${color_off}@${color_blue}\H${color_off}:${color_yellow}\w${color_off}" "\$ "'
 fi
 
 # local .bashrc include
