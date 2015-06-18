@@ -1,0 +1,11 @@
+[user]
+	name = Denys Mikhalenko
+	email = prontiol@gmail.com
+[core]
+	autocrlf = input
+	editor = vim
+	excludesfile = /Users/Prontiol/.gitexcludes
+[push]
+	default = simple
+[color]
+	ui = auto

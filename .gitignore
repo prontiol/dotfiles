@@ -1,4 +1,6 @@
 *
+!.gitconfig
+!.gitexcludes
 !.gitmodules
 !.bash_profile
 !.bashrc
