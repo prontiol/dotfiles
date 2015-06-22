@@ -132,3 +132,6 @@ if [ -f ~/.bashrc ]; then
     . ~/.bashrc
 fi
 
+# terminal window title
+echo -ne "\033]0;${PS1_PREFIX}${HOSTNAME}\007"
+
