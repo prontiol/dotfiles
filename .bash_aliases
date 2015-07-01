@@ -29,7 +29,6 @@ alias wget='wget -c'
 # git aliases
 alias git-cleanup='for dir in $(find . -name ".git" -type d); do echo "Processing $dir"; cd $dir/..; git fetch -p; git fsck --full; git reflog expire --all --expire=now; git gc --aggressive --prune=now; cd ..; done'
 
-
 # colors
 export CLICOLOR=1
 if [[ -n $(command -v dircolors) ]]; then
