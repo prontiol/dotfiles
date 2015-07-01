@@ -32,7 +32,7 @@ alias git-cleanup='for dir in $(find . -name ".git" -type d); do echo "Processin
 
 # colors
 export CLICOLOR=1
-if [ -x /usr/bin/dircolors ]; then
+if [[ -n $(command -v dircolors) ]]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
     alias dir='dir --color=auto'
