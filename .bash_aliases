@@ -27,7 +27,8 @@ alias du='du -ch'
 alias wget='wget -c'
 
 # git aliases
-alias git-cleanup='for dir in $(find . -name ".git" -type d); do echo "Processing $dir"; cd $dir/..; git fetch -p; git fsck --full; git reflog expire --all --expire=now; git gc --aggressive --prune=now; cd ..; done'
+alias git-cleanup='git fetch -p; git fsck --full; git reflog expire --all --expire=now; git gc --aggressive --prune=now; git repack -a -d -f --window=1000 --depth=1000'
+alias git-cleanup-all='for dir in $(find . -name ".git" -type d); do echo "Processing $dir"; cd $dir/..; git-cleanup; cd ..; done'
 
 # colors
 export CLICOLOR=1
