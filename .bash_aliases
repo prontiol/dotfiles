@@ -51,5 +51,6 @@ if [ $UID -ne 0 ]; then
     alias halt='sudo /sbin/halt'
     alias shutdown='sudo /sbin/shutdown'
     alias apt-get='sudo apt-get'
+    alias iptables='sudo iptables'
 fi
 
