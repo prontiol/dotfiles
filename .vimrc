@@ -17,9 +17,9 @@ set noautowrite                   " don't automatically write on :next
 set autoindent smartindent        " auto/smart indents
 set smarttab                      " smart tab width
 set expandtab                     " expand tabs to spaces
-set tabstop=4                     " tab width for files with tabs
-set softtabstop=4                 " virtual tab stop
-set shiftwidth=4                  " autoindent step width
+set tabstop=2                     " tab width for files with tabs
+set softtabstop=2                 " virtual tab stop
+set shiftwidth=2                  " autoindent step width
 set backspace=indent,eol,start    " set backspace to delete indentation, line breaks and so on
 set history=64                    " history size
 set paste                         " no autoindent on paste
