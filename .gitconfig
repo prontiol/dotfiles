@@ -7,5 +7,6 @@
 	excludesfile = /Users/Prontiol/.gitexcludes
 [push]
 	default = simple
+	followTags = true
 [color]
 	ui = auto
