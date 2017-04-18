@@ -8,7 +8,5 @@
 [push]
 	default = simple
 	followTags = true
-[pull]
-	rebase = preserve
 [color]
 	ui = auto
