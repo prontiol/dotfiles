@@ -1,6 +1,7 @@
 *
 !.editorconfig
 !.gitconfig
+!.gitattributes
 !.gitexcludes
 !.gitmodules
 !.bash_profile
