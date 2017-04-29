@@ -6,6 +6,8 @@
 	editor = vim
 	attributesfile = ~/.gitattributes
 	excludesfile = /Users/Prontiol/.gitexcludes
+[fetch]
+	prune = true
 [push]
 	default = simple
 	followTags = true
