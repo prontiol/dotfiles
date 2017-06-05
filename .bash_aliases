@@ -42,6 +42,9 @@ if [[ -n $(command -v dircolors) ]]; then
     alias egrep='egrep --color=auto'
 fi
 
+# https://www.digitalocean.com/community/questions/what-are-your-favorite-bash-aliases?answer=30383
+alias sudo='sudo '
+
 # su aliases
 alias root='sudo -i'
 alias su='sudo -i'
