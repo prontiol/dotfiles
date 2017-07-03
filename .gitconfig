@@ -1,6 +1,7 @@
 [user]
 	name = Denys Mikhalenko
 	email = denys@prontiol.com
+	signingkey = 38437BE5
 [core]
 	autocrlf = input
 	editor = vim
@@ -39,3 +40,5 @@
 [url "git://gist.github.com/"]
         insteadOf = "gist:"
 
+[commit]
+	gpgsign = true
