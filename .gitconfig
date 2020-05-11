@@ -1,7 +1,7 @@
 [user]
 	name = Denys Mikhalenko
 	email = denys@prontiol.com
-	signingkey = 38437BE5
+	signingkey = 9D3544A365E175F6930EED897EF13F91370E112D
 [core]
 	autocrlf = input
 	editor = vim
