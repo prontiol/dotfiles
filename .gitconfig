@@ -2,18 +2,31 @@
 	name = Denys Mikhalenko
 	email = denys@prontiol.com
 	signingkey = 9D3544A365E175F6930EED897EF13F91370E112D
+
 [core]
 	autocrlf = input
 	editor = vim
 	attributesfile = ~/.gitattributes
 	excludesfile = ~/.gitexcludes
+
+[color]
+	ui = auto
+
+[init]
+	defaultBranch = master
+
 [fetch]
 	prune = true
+
+[pull]
+	ff = only
+
+[commit]
+	gpgsign = true
+
 [push]
 	default = simple
 	followTags = true
-[color]
-	ui = auto
 
 # Any GitHub repo with my username should be checked out r/w by default
 # http://rentzsch.tumblr.com/post/564806957/public-but-hackable-git-submodules
@@ -40,9 +53,3 @@
 [url "git://gist.github.com/"]
 	insteadOf = "gist:"
 
-[commit]
-	gpgsign = true
-[pull]
-	ff = only
-[init]
-	defaultBranch = master
