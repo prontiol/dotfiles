@@ -24,6 +24,9 @@
 [commit]
 	gpgsign = true
 
+[tag]
+	forceSignAnnotated = true
+
 [push]
 	default = simple
 	followTags = true
