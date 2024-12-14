@@ -13,7 +13,7 @@
 	ui = auto
 
 [init]
-	defaultBranch = master
+	defaultBranch = main
 
 [fetch]
 	prune = true
